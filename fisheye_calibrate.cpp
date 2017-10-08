@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 	int successImageNum = 0;                
 	int count = 0;
 
-    //if you want to calibrate online
+    	//if you want to calibrate online
 	VideoCapture cap(0);
 	Mat image;
 	
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
         cv::Mat image = imread("fish"+imageFileName); 
         */
 
-		cv::Mat imageGray;   
+	cv::Mat imageGray;   
         cvtColor(image, imageGray, CV_BGR2GRAY);
 		bool patternfound = findChessboardCorners(imageGray, board_size, corners, CALIB_CB_ADAPTIVE_THRESH );
         if (!patternfound)   
@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 	cout<<"角点提取完成！\n";
 
 	/************************************************************************  
-           摄像机定标  
+           				摄像机定标  
     *************************************************************************/   
     cout<<"开始定标………………"<<endl;  
     Size square_size = Size(20,20);     
@@ -135,7 +135,7 @@ int main(int argc, char* argv[])
     cout<<"定标完成！\n";   
 
     /************************************************************************  
-           对定标结果进行评价  
+           			对定标结果进行评价  
     *************************************************************************/   
     cout<<"开始评价定标结果………………"<<endl;   
     double total_err = 0.0;                   /* 所有图像的平均误差的总和 */   
@@ -168,7 +168,7 @@ int main(int argc, char* argv[])
     cout<<"评价完成！"<<endl;   
 
     /************************************************************************  
-           保存定标结果  
+           			保存定标结果  
     *************************************************************************/   
     cout<<"开始保存定标结果………………"<<endl;       
     Mat rotation_matrix = Mat(3,3,CV_32FC1, Scalar::all(0)); /* 保存每幅图像的旋转矩阵 */   
@@ -194,7 +194,7 @@ int main(int argc, char* argv[])
 
 
     /************************************************************************  
-           显示定标结果  
+           			显示定标结果  
     *************************************************************************/
     Mat mapx = Mat(image_size,CV_32FC1);
     Mat mapy = Mat(image_size,CV_32FC1);
