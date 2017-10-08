@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 
 	cv::Mat imageGray;   
         cvtColor(image, imageGray, CV_BGR2GRAY);
-		bool patternfound = findChessboardCorners(imageGray, board_size, corners, CALIB_CB_ADAPTIVE_THRESH );
+	bool patternfound = findChessboardCorners(imageGray, board_size, corners, CALIB_CB_ADAPTIVE_THRESH );
         if (!patternfound)   
         {   
             cout<<"can not find chessboard corners!\n";     
