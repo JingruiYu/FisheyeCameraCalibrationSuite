@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Fisheye Camera Calibration Suite"
+message: "If you use this repository, please cite or acknowledge this repository and any related publication listed in the README."
+type: software
+authors:
+  - family-names: Yu
+    given-names: Jingrui
+repository-code: "https://github.com/JingruiYu/fisheye-camera-calibration-suite"
+date-released: "2026-06-14"
+license: "Apache-2.0"

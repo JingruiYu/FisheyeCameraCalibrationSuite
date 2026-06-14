@@ -1,6 +1,22 @@
 # Fisheye Camera Calibration Suite
 
+<p align="center">
+  <img src="https://img.shields.io/badge/language-C++-blue" />
+  <img src="https://img.shields.io/badge/OpenCV-camera--calibration-brightgreen" />
+  <img src="https://img.shields.io/badge/topic-fisheye--camera-orange" />
+  <img src="https://img.shields.io/badge/license-Apache--2.0-green" />
+</p>
+
 [中文](#中文说明) | [English](#english)
+
+## Contents
+
+- [Overview](#english)
+- [Repository structure](#repository-structure)
+- [Citation](#citation)
+- [License](#license)
+- [中文说明](#中文说明)
+
 
 ## English
 
@@ -68,6 +84,15 @@ Before running on your own data, check these parameters in the source files:
 
 `camera calibration`, `fisheye calibration`, `pinhole camera`, `OpenCV`, `chessboard calibration`, `intrinsic parameters`, `distortion coefficients`, `robotics perception`, `visual odometry`, `SLAM`
 
+
+## Citation
+
+If you use this repository, please cite or acknowledge it using the metadata in [`CITATION.cff`](CITATION.cff).
+
+## License
+
+This repository is released under the [Apache License 2.0](LICENSE). Please retain the license and notice files when redistributing or reusing the code.
+
 ---
 
 ## 中文说明
@@ -86,3 +111,7 @@ Before running on your own data, check these parameters in the source files:
 ## 说明
 
 该项目使用的是较早期 OpenCV API。如果在新版本 OpenCV 上编译，可能需要对头文件和部分接口做少量适配。
+
+## 引用与许可
+
+如果你使用该仓库，请通过 [`CITATION.cff`](CITATION.cff) 引用或致谢该项目。许可协议见 [`LICENSE`](LICENSE)。
