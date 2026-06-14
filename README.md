@@ -1,43 +1,37 @@
 # Fisheye Camera Calibration Suite
 
-A compact C++/OpenCV toolkit for calibrating **fisheye** and **pinhole** cameras from image streams or saved calibration images.
+[中文](#中文说明) | [English](#english)
 
-This repository is part of my earlier robotics and autonomous-driving perception work. It focuses on the practical camera-calibration layer that often sits before SLAM, visual odometry, BEV perception, and multi-camera spatial understanding.
+## English
 
-## Why this repository exists
+A compact C++ / OpenCV toolkit for calibrating **fisheye** and **pinhole** cameras with chessboard observations.
 
-Accurate camera calibration is a prerequisite for many downstream robotics tasks:
+This repository focuses on the practical camera-calibration workflow: collecting chessboard corners, estimating intrinsic parameters, estimating distortion coefficients, and saving calibration results for downstream computer-vision or robotics applications.
 
-- visual odometry and SLAM;
-- bird's-eye-view transformation;
-- 3D reconstruction;
-- autonomous-driving perception;
-- multi-camera geometric consistency.
+## Highlights
 
-This project provides small, readable calibration utilities that can be used as a reference implementation or as a starting point for camera-model experiments.
-
-## Features
-
-- **Fisheye camera calibration** using OpenCV fisheye camera model.
-- **Pinhole camera calibration** using the standard OpenCV camera model.
-- C++ implementation with a minimal dependency footprint.
-- Useful as an educational reference for camera geometry and calibration workflows.
+- Supports both **fisheye camera calibration** and **standard pinhole camera calibration**.
+- Uses OpenCV chessboard corner detection and sub-pixel refinement.
+- Provides small, readable C++ examples for understanding the full calibration pipeline.
+- Useful for robotics, autonomous-driving perception, visual odometry, SLAM, BEV projection, and multi-camera geometry experiments.
 
 ## Repository structure
 
 ```text
 .
-├── camera_calibrate.cpp      # Pinhole camera calibration
-├── fisheye_calibrate.cpp     # Fisheye camera calibration
+├── camera_calibrate.cpp      # Standard pinhole-camera calibration example
+├── fisheye_calibrate.cpp     # Fisheye-camera calibration example
 ├── CMakeLists.txt            # CMake build configuration
 └── README.md
 ```
 
 ## Requirements
 
-- C++ compiler with C++11 support or later
 - CMake
+- C++ compiler
 - OpenCV
+
+The code was originally written with an older OpenCV API. If you build it with a modern OpenCV version, a small API migration may be needed, especially around legacy headers such as `cv.h` and `highgui.h`.
 
 ## Build
 
@@ -48,21 +42,47 @@ cmake ..
 make -j
 ```
 
-## Run
+## Usage
+
+Run the fisheye calibration example:
 
 ```bash
 ./fisheye_calibrate
-# or
+```
+
+Run the standard pinhole calibration example:
+
+```bash
 ./camera_calibrate
 ```
 
-Please check the source files for the expected image input path, calibration-board configuration, and camera-model parameters before running on your own data.
+Before running on your own data, check these parameters in the source files:
 
-## Notes
+- camera index or image path;
+- chessboard size;
+- square size;
+- number of calibration images;
+- output file path.
 
-This is a historical research/engineering repository. I keep it public because it shows a concrete part of my long-term work in camera geometry, 3D vision, and robotics perception.
+## Keywords
 
-For my more recent work, see:
+`camera calibration`, `fisheye calibration`, `pinhole camera`, `OpenCV`, `chessboard calibration`, `intrinsic parameters`, `distortion coefficients`, `robotics perception`, `visual odometry`, `SLAM`
 
-- [pyCuSFM: CUDA-accelerated Structure-from-Motion](https://github.com/nvidia-isaac/pyCuSFM)
-- [NVIDIA Isaac Neural Reconstruction](https://docs.nvidia.com/nurec/robotics/neural_reconstruction_stereo.html)
+---
+
+## 中文说明
+
+这是一个基于 **C++ / OpenCV** 的相机标定小工具，支持 **鱼眼相机标定** 和 **普通针孔相机标定**。
+
+项目主要覆盖相机标定中的基础流程：采集棋盘格角点、亚像素角点优化、估计相机内参、估计畸变参数，并输出可供后续视觉任务使用的标定结果。
+
+## 功能特点
+
+- 支持鱼眼相机和普通针孔相机两类标定流程；
+- 使用 OpenCV 的棋盘格角点检测与亚像素优化；
+- 代码结构较小，适合作为理解相机标定流程的参考实现；
+- 可用于机器人感知、自动驾驶感知、视觉里程计、SLAM、BEV 投影、多相机几何等前置实验。
+
+## 说明
+
+该项目使用的是较早期 OpenCV API。如果在新版本 OpenCV 上编译，可能需要对头文件和部分接口做少量适配。
