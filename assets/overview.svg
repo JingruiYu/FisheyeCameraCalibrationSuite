@@ -1,0 +1,39 @@
+<svg width="960" height="360" viewBox="0 0 960 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="360" rx="24" fill="#0f172a"/>
+  <rect x="28" y="28" width="904" height="304" rx="20" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <text x="480" y="72" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700" fill="#f8fafc">Fisheye Camera Calibration Suite</text>
+  <text x="480" y="106" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#cbd5e1">OpenCV-based calibration workflow for pinhole and fisheye camera models.</text>
+  <g>
+    <rect x="70" y="166" width="136" height="70" rx="14" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+    <text x="138" y="196" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Chessboard Images</text>
+    <text x="138" y="216" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc"></text>
+  </g>
+  <path d="M 214 201 L 224 201" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 224 201 L 224 194 L 224 208 Z" fill="#2563eb"/>
+  <g>
+    <rect x="242" y="166" width="136" height="70" rx="14" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+    <text x="310" y="196" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Corner Detection</text>
+    <text x="310" y="216" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc"></text>
+  </g>
+  <path d="M 386 201 L 396 201" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 396 201 L 396 194 L 396 208 Z" fill="#2563eb"/>
+  <g>
+    <rect x="414" y="166" width="136" height="70" rx="14" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+    <text x="482" y="196" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Intrinsic Calibration</text>
+    <text x="482" y="216" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc"></text>
+  </g>
+  <path d="M 558 201 L 568 201" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 568 201 L 568 194 L 568 208 Z" fill="#2563eb"/>
+  <g>
+    <rect x="586" y="166" width="136" height="70" rx="14" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+    <text x="654" y="196" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Distortion Model</text>
+    <text x="654" y="216" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc"></text>
+  </g>
+  <path d="M 730 201 L 740 201" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 740 201 L 740 194 L 740 208 Z" fill="#2563eb"/>
+  <g>
+    <rect x="758" y="166" width="136" height="70" rx="14" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+    <text x="826" y="196" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc">Calibration Output</text>
+    <text x="826" y="216" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#f8fafc"></text>
+  </g>
+</svg>

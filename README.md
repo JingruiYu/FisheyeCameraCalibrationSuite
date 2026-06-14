@@ -12,6 +12,7 @@
 ## Contents
 
 - [Overview](#english)
+- [Visual overview](#visual-overview)
 - [Repository structure](#repository-structure)
 - [Citation](#citation)
 - [License](#license)
@@ -30,6 +31,12 @@ This repository focuses on the practical camera-calibration workflow: collecting
 - Uses OpenCV chessboard corner detection and sub-pixel refinement.
 - Provides small, readable C++ examples for understanding the full calibration pipeline.
 - Useful for robotics, autonomous-driving perception, visual odometry, SLAM, BEV projection, and multi-camera geometry experiments.
+
+## Visual overview
+
+<p align="center">
+  <img src="assets/overview.svg" width="820" alt="Fisheye camera calibration workflow diagram" />
+</p>
 
 ## Repository structure
 
