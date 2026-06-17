@@ -20,10 +20,17 @@ using namespace cv;
 int main(int argc, char* argv[])
 {
 
-	ofstream fout("caliberation_result.txt");
+	const int kImageCount = 10;
+    const int kBoardWidth = 9;
+    const int kBoardHeight = 6;
+    const int kSquareWidth = 20;
+    const int kSquareHeight = 20;
+    const int kCameraIndex = 0;
 
-	int image_count=  10;                       
-	Size board_size = Size(9,6);             
+	ofstream fout("calibration_result.txt");
+
+	int image_count = kImageCount;
+	Size board_size = Size(kBoardWidth, kBoardHeight);             
 	vector<Point2f> corners;                  
 	vector<vector<Point2f> > corners_Seq;      
 	vector<Mat>  image_Seq;
@@ -31,7 +38,7 @@ int main(int argc, char* argv[])
 	int count = 0;
 
     	//if you want to calibrate online
-	VideoCapture cap(0);
+	VideoCapture cap(kCameraIndex);
 	Mat image;
 	
 	while(successImageNum < image_count){
@@ -39,7 +46,7 @@ int main(int argc, char* argv[])
         //if you want to calibrate online
 		cap >> image;
 		if(!image.empty())
-			imshow("caliberation", image);
+			imshow("calibration", image);
 
         //if you want to use image file to calibrate
         /*
@@ -94,7 +101,7 @@ int main(int argc, char* argv[])
            				摄像机定标  
     *************************************************************************/   
     cout<<"开始定标………………"<<endl;  
-    Size square_size = Size(20,20);     
+    Size square_size = Size(kSquareWidth, kSquareHeight);     
     vector<vector<Point3f> >  object_Points;        /****  保存定标板上角点的三维坐标   ****/
 
     Mat image_points = Mat(1, count, CV_32FC2, Scalar::all(0));  /*****   保存提取的所有角点   *****/

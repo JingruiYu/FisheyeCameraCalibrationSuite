@@ -15,22 +15,23 @@
 using namespace std;
 using namespace cv;
 
-int n_boards = 20;
-const int board_dt = 20;
-const int board_w = 9;
-const int board_h = 6;
+const int kNumberOfBoards = 20;
+const int kBoardCaptureInterval = 20;
+const int kBoardWidth = 9;
+const int kBoardHeight = 6;
+const int kCameraIndex = 0;
 
 int main(int argc, char* argv[])
 {
-    int board_n = board_w * board_h;
-    CvSize board_sz = cvSize( board_w, board_h );
-    CvCapture* capture = cvCreateCameraCapture(0);
+    int board_n = kBoardWidth * kBoardHeight;
+    CvSize board_sz = cvSize(kBoardWidth, kBoardHeight);
+    CvCapture* capture = cvCreateCameraCapture(kCameraIndex);
     assert( capture );
 
     cvNamedWindow("Calibration");
-    CvMat* image_points     = cvCreateMat(n_boards*board_n,2,CV_32FC1);
-    CvMat* object_points    = cvCreateMat(n_boards*board_n,3,CV_32FC1);
-    CvMat* point_counts     = cvCreateMat(n_boards,1,CV_32SC1);
+    CvMat* image_points     = cvCreateMat(kNumberOfBoards * board_n, 2, CV_32FC1);
+    CvMat* object_points    = cvCreateMat(kNumberOfBoards * board_n, 3, CV_32FC1);
+    CvMat* point_counts     = cvCreateMat(kNumberOfBoards, 1, CV_32SC1);
     CvMat* intrinsic_matrix = cvCreateMat(3,3,CV_32FC1);
     CvMat* distortion_coeffs= cvCreateMat(5,1,CV_32FC1);
 
@@ -41,9 +42,9 @@ int main(int argc, char* argv[])
     IplImage *image = cvQueryFrame( capture );
     IplImage *gray_image = cvCreateImage(cvGetSize(image),8,1);
 
-    while(successes < n_boards){
+    while(successes < kNumberOfBoards){
 
-        if(frame++ % board_dt == 0){
+        if(frame++ % kBoardCaptureInterval == 0){
             cvCvtColor(image, gray_image, CV_BGR2GRAY);
             int found = cvFindChessboardCorners( gray_image, board_sz, corners, &corner_count, CV_CALIB_CB_ADAPTIVE_THRESH);
 
@@ -67,8 +68,8 @@ int main(int argc, char* argv[])
                 for( int i=step, j=0; j<board_n; ++i,++j){
                     CV_MAT_ELEM(*image_points, float, i, 0) = corners[j].x;
                     CV_MAT_ELEM(*image_points, float, i, 1) = corners[j].y;
-                    CV_MAT_ELEM(*object_points,float, i, 0) = j/board_w;
-                    CV_MAT_ELEM(*object_points,float, i, 1) = j%board_w;
+                    CV_MAT_ELEM(*object_points,float, i, 0) = j / kBoardWidth;
+                    CV_MAT_ELEM(*object_points,float, i, 1) = j % kBoardWidth;
                     CV_MAT_ELEM(*object_points,float, i, 2) = 0.0f;
                 }
                 CV_MAT_ELEM(*point_counts, int, successes, 0) = board_n;
